@@ -14,7 +14,7 @@ CREATE TABLE `destinasi` (
 	`deskripsi` VARCHAR(255) NOT NULL,
 	`alamat` VARCHAR(100) NOT NULL,
 	`jam_buka` TIME NOT NULL,
-	`jarak` INTEGER NOT NULL,
+	`jarak` FLOAT(5,2) NOT NULL,
 	`harga_tiket` INTEGER NOT NULL,
 	PRIMARY KEY(`id`)
 );
