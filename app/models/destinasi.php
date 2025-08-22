@@ -26,6 +26,18 @@ class destinasi {
             $stmt = $this->conn->prepare("SELECT * FROM destinasi WHERE id = :id");
             $stmt->bindParam(':id', $id);
             $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            $querry = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($querry){
+                echo "Nama destinasi: " . $querry['nama'] ."\n";
+                echo "Gambar destinasi: " . $querry['gambar'] ."\n";
+                echo "Deskripsi destinasi: " . $querry['deskripsi'] ."\n";
+                echo "Alamat destinasi: " . $querry['alamat'] ."\n";
+                echo "Jam buka destinasi: " . $querry['jam_buka'] ."\n";
+                echo "Jarak destinasi: " . $querry['jarak'] ."\n";
+                echo "Harga tiket destinasi: " . $querry['harga_tiket'] ."\n";
+            } else {
+                echo "Error: " . $stmt->errorInfo()[2];
+            }
         }
 }

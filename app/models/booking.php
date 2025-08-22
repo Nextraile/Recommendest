@@ -31,6 +31,25 @@ class booking{
             $stmt = $this->conn->prepare("SELECT * FROM booking WHERE id = :id");
             $stmt->bindParam(':id', $id);
             $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            $querry = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            if($querry){
+                echo "ID Booking: " . $querry['id'] . "\n";
+                echo "User ID: " . $querry['user_id'] . "\n";
+                echo "Destinasi ID: " . $querry['destinasi_id'] . "\n";
+                echo "Email: " . $querry['email'] . "\n";
+                echo "Telepon: " . $querry['telp'] . "\n";
+                echo "Tanggal Booking: " . $querry['tanggal_booking'] . "\n";
+                echo "Tanggal Berangkat: " . $querry['tanggal_berangkat'] . "\n";
+                echo "Musim: " . $querry['musim'] . "\n";
+                echo "Jumlah Orang: " . $querry['jumlah_orang'] . "\n";
+                echo "Note: " . $querry['note'] . "\n";
+                echo "Diskon: " . $querry['diskon'] . "\n";
+                echo "Cashback: " . $querry['cashback'] . "\n";
+                echo "Total: " . $querry['total'] . "\n";
+            } else {
+                echo "Error: " . $stmt->errorInfo()[2];
+
+            }
     }
 }
