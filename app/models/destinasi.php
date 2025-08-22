@@ -4,6 +4,7 @@ class destinasi {
     public function __construct(PDO $conn){
         $this->conn = $conn;
     }
+// Function addDestinasi
     public function addDestinasi($nama,$gambar,$deskripsi,$alamat,$jam_buka,$jarak,$harga_tiket){
         $stmt = $this->conn->prepare("INSERT INTO destinasi (nama, gambar, deskripsi, alamat, jam_buka, jarak, harga_tiket) VALUES (:nama, :gambar, :deskripsi, :alamat, :jam_buka, :jarak, :harga_tiket)");
         $stmt->bindParam(':nama', $nama);
@@ -20,7 +21,7 @@ class destinasi {
             echo "Error: " . $stmt->errorInfo()[2];
         }
     }
-    // Funtion output data destinasi
+// Funtion getDestinasi
         public function getDestinasi($id){
             $stmt = $this->conn->prepare("SELECT * FROM destinasi WHERE id = :id");
             $stmt->bindParam(':id', $id);

@@ -4,9 +4,7 @@ $username   = "root";
 $password   = "";
 $database   = "recommendest";
 
-//connect databases
-
-// Cek koneksi
+// Inisialisasi koneksi database menggunakan PDO
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
 } catch (PDOException $e) {

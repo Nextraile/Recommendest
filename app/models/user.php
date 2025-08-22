@@ -4,7 +4,7 @@ class user {
     public function __construct(PDO $conn){
         $this->conn = $conn;
     }
-// Function input data user
+// Function addUser
     public function addUser($nama,$saldo,$membership){
         $stmt = $this->conn->prepare("INSERT INTO user (nama, saldo, membership) VALUES (:nama, :saldo, :membership)");
         $stmt->bindParam(':nama', $nama);
@@ -17,7 +17,7 @@ class user {
             echo "Error: " . $stmt->errorInfo()[2];
         }
     }
-    // Funtion output data user
+// Funtion getUser
         public function getUser($id){
             $stmt = $this->conn->prepare("SELECT * FROM user WHERE id = :id");
             $stmt->bindParam(':id', $id);

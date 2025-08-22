@@ -4,6 +4,7 @@ class booking{
     public function __construct(PDO $conn){
         $this->conn = $conn;
     }
+// Function addBooking
     public function addBooking($user_id,$destinasi_id,$email,$telp,$tanggal_booking,$tanggal_berangkat,$musim,$jumlah_orang,$note,$diskon,$cashback,$total){
         $stmt = $this->conn->prepare("INSERT INTO booking (user_id, destinasi_id, email, telp, tanggal_booking, tanggal_berangkat, musim, jumlah_orang, note, diskon, cashback, total) VALUES (:user_id, :destinasi_id, :email, :telp, :tanggal_booking, :tanggal_berangkat, :musim, :jumlah_orang, :note, :diskon, :cashback, :total)");
         $stmt->bindParam(':user_id', $user_id);
@@ -25,7 +26,7 @@ class booking{
             echo "Error: " . $stmt->errorInfo()[2];
         }
     }
-    // Funtion output data booking
+// Function getBooking
         public function getBooking($id){
             $stmt = $this->conn->prepare("SELECT * FROM booking WHERE id = :id");
             $stmt->bindParam(':id', $id);
