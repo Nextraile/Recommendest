@@ -34,13 +34,13 @@ CREATE TABLE `booking` (
 	`diskon` FLOAT(5,2) DEFAULT 0 NOT NULL,
 	`cashback` FLOAT(12,3) DEFAULT 0 NOT NULL,
 	`total` FLOAT(12,3) DEFAULT 0 NOT NULL,
-	PRIMARY KEY(`id`, `user_id`, `destinasi_id`)
+	PRIMARY KEY(`id`)
 );
 
 
-ALTER TABLE `user`
-ADD FOREIGN KEY(`id`) REFERENCES `booking`(`user_id`)
+ALTER TABLE `booking`
+ADD FOREIGN KEY(`user_id`) REFERENCES `user`(`id`)
 ON UPDATE NO ACTION ON DELETE CASCADE;
-ALTER TABLE `destinasi`
-ADD FOREIGN KEY(`id`) REFERENCES `booking`(`destinasi_id`)
+ALTER TABLE `booking`
+ADD FOREIGN KEY(`destinasi_id`) REFERENCES `destinasi`(`id`)
 ON UPDATE NO ACTION ON DELETE CASCADE;

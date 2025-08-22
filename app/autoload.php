@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/config/config.php';
 // autoload function buat ngeload class secara otomatis
 spl_autoload_register(function ($class)
 {
@@ -11,7 +11,8 @@ spl_autoload_register(function ($class)
     [
         __DIR__ . '/models/',
         __DIR__ . '/views/',
-        __DIR__ . '/controllers/'
+        __DIR__ . '/controllers/',
+        __DIR__ . '/config/'
     ];
 
     // nyari file class di tiap direktori yang ada di $path
