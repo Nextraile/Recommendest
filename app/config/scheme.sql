@@ -11,10 +11,10 @@ CREATE TABLE `destinasi` (
 	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
 	`nama` VARCHAR(75) NOT NULL,
 	`gambar` VARCHAR(50) NOT NULL,
-	`deskripsi` VARCHAR(255) NOT NULL,
+	`deskripsi` TEXT NOT NULL,
 	`alamat` VARCHAR(100) NOT NULL,
-	`jam_buka` TIME NOT NULL,
-	`jarak` INTEGER NOT NULL,
+	`jam_buka` VARCHAR(15) NOT NULL,
+	`jarak` FLOAT(5,2) NOT NULL,
 	`harga_tiket` INTEGER NOT NULL,
 	PRIMARY KEY(`id`)
 );
@@ -34,13 +34,13 @@ CREATE TABLE `booking` (
 	`diskon` FLOAT(5,2) DEFAULT 0 NOT NULL,
 	`cashback` FLOAT(12,3) DEFAULT 0 NOT NULL,
 	`total` FLOAT(12,3) DEFAULT 0 NOT NULL,
-	PRIMARY KEY(`id`, `user_id`, `destinasi_id`)
+	PRIMARY KEY(`id`)
 );
 
 
-ALTER TABLE `user`
-ADD FOREIGN KEY(`id`) REFERENCES `booking`(`user_id`)
+ALTER TABLE `booking`
+ADD FOREIGN KEY(`user_id`) REFERENCES `user`(`id`)
 ON UPDATE NO ACTION ON DELETE CASCADE;
-ALTER TABLE `destinasi`
-ADD FOREIGN KEY(`id`) REFERENCES `booking`(`destinasi_id`)
+ALTER TABLE `booking`
+ADD FOREIGN KEY(`destinasi_id`) REFERENCES `destinasi`(`id`)
 ON UPDATE NO ACTION ON DELETE CASCADE;
