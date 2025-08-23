@@ -11,9 +11,9 @@ CREATE TABLE `destinasi` (
 	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
 	`nama` VARCHAR(75) NOT NULL,
 	`gambar` VARCHAR(50) NOT NULL,
-	`deskripsi` VARCHAR(255) NOT NULL,
+	`deskripsi` TEXT NOT NULL,
 	`alamat` VARCHAR(100) NOT NULL,
-	`jam_buka` TIME NOT NULL,
+	`jam_buka` VARCHAR(15) NOT NULL,
 	`jarak` FLOAT(5,2) NOT NULL,
 	`harga_tiket` INTEGER NOT NULL,
 	PRIMARY KEY(`id`)

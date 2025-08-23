@@ -34,7 +34,7 @@ class destinasi {
                 echo "Deskripsi destinasi: " . $querry['deskripsi'] ."\n";
                 echo "Alamat destinasi: " . $querry['alamat'] ."\n";
                 echo "Jam buka destinasi: " . $querry['jam_buka']." WIB" ."\n";
-                echo "Jarak destinasi: " . $querry['jarak'] . " km" ."\n";
+                echo "Jarak destinasi: " . $querry['jarak'] . " km dari Balaikota" ."\n";
                 echo "Harga tiket destinasi: " . "Rp.". $querry['harga_tiket'] ."\n";
             } else {
                 echo "Error: " . $stmt->errorInfo()[2];
