@@ -29,4 +29,10 @@ class User{
         $new_saldo = $current_saldo - $saldo;
         $this->model->updateSaldo($id, $new_saldo);
     }
+
+    public function cashback($id, $amount){
+        $current_cashback = $this->model->getCashback($id);
+        $new_cashback = $current_cashback + $amount;
+        $this->model->updateCashback($id, $new_cashback);
+    }
 }
