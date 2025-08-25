@@ -1,21 +1,22 @@
 <?php
 require_once __DIR__ . '/../app/autoload.php';
+require_once __DIR__ . '/session/session.php';
 
+$page = $_GET['page'] ?? 'home';
 
+switch($page)
+{
+    case 'home':
+        $controller = new HomeController();
+        break;
 
-$user = new user($conn);
-echo $user->getUser(1);
+    case 'rekomendasi':
+        $controller = new RekomendasiController();
+        $controller->index();
+        break;
 
-// `nama` VARCHAR(75) NOT NULL,
-// 	`gambar` VARCHAR(50) NOT NULL,
-// 	`deskripsi` VARCHAR(255) NOT NULL,
-// 	`alamat` VARCHAR(100) NOT NULL,
-// 	`jam_buka` TIME NOT NULL,
-// 	`jarak` FLOAT(5,2) NOT NULL,
-// 	`harga_tiket` INTEGER NOT NULL,
-
-$destinasi = new destinasi($conn);
-// $destinasi->addDestinasi(
-
-// );
-echo $destinasi->getDestinasi(2);
+    default:
+        http_response_code(404);
+        require_once __DIR__ . '/../views/404.php';
+        break;
+}

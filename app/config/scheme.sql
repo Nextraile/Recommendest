@@ -2,7 +2,7 @@ CREATE TABLE `user` (
 	`id` INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
 	`nama` VARCHAR(75) NOT NULL,
 	`saldo` INTEGER DEFAULT 0 NOT NULL,
-	`membership` ENUM('silver', 'gold', 'non membership') NOT NULL DEFAULT 'non membership',
+	`membership` ENUM('Silver', 'Gold', 'Non-Membership') NOT NULL DEFAULT 'Non-Membership',
 	PRIMARY KEY(`id`)
 );
 

@@ -1,5 +1,5 @@
 <?php
-class booking{ 
+class BookingModel{ 
     public PDO $conn;
     public function __construct(PDO $conn){
         $this->conn = $conn;
@@ -26,30 +26,41 @@ class booking{
             echo "Error: " . $stmt->errorInfo()[2];
         }
     }
-// Function getBooking
-        public function getBooking($id){
-            $stmt = $this->conn->prepare("SELECT * FROM booking WHERE id = :id");
-            $stmt->bindParam(':id', $id);
-            $stmt->execute();
-            $querry = $stmt->fetch(PDO::FETCH_ASSOC);
-            
-            if($querry){
-                echo "ID Booking: " . $querry['id'] . "\n";
-                echo "User ID: " . $querry['user_id'] . "\n";
-                echo "Destinasi ID: " . $querry['destinasi_id'] . "\n";
-                echo "Email: " . $querry['email'] . "\n";
-                echo "Telepon: " . $querry['telp'] . "\n";
-                echo "Tanggal Booking: " . $querry['tanggal_booking'] . "\n";
-                echo "Tanggal Berangkat: " . $querry['tanggal_berangkat'] . "\n";
-                echo "Musim: " . $querry['musim'] . "\n";
-                echo "Jumlah Orang: " . $querry['jumlah_orang'] . "\n";
-                echo "Note: " . $querry['note'] . "\n";
-                echo "Diskon: " . $querry['diskon'] . "\n";
-                echo "Cashback: " . $querry['cashback'] . "\n";
-                echo "Total: " . $querry['total'] . "\n";
-            } else {
-                echo "Error: " . $stmt->errorInfo()[2];
 
-            }
+    public function deleteBooking($id){
+        $stmt = $this->conn->prepare("DELETE FROM booking WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        if($stmt->execute()){
+            return $notif = "Booking berhasil dihapus!";
+        } else {
+            return "Error: " . $stmt->errorInfo()[2];
+        }
+    }
+
+// Function getBooking
+    public function getDetailsBooking($id){
+        $stmt = $this->conn->prepare("SELECT * FROM booking WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $querry = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if($querry){
+            return $querry;
+        } else {
+            echo "Error: " . $stmt->errorInfo()[2];
+        }
+    }
+
+    public function getAllUserBookings($user_id){
+        $stmt = $this->conn->prepare("SELECT id, email, telp, tanggal_berangkat, jumlah_orang, note FROM booking WHERE user_id = :user_id");
+        $stmt->bindParam(':user_id', $user_id);
+        $stmt->execute();
+        $querry = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if($querry){
+            return $querry;
+        } else {
+            echo "Error: " . $stmt->errorInfo()[2];
+        }
     }
 }

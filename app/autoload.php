@@ -12,6 +12,7 @@ spl_autoload_register(function ($class)
         __DIR__ . '/models/',
         __DIR__ . '/views/',
         __DIR__ . '/controllers/',
+        __DIR__ . '/controllers/user/',
         __DIR__ . '/config/',
     ];
 
