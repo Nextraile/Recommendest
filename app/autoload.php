@@ -11,9 +11,10 @@ spl_autoload_register(function ($class)
     [
         __DIR__ . '/models/',
         __DIR__ . '/views/',
-        __DIR__ . '/controllers/',
         __DIR__ . '/controllers/user/',
-        __DIR__ . '/config/',
+        __DIR__ . '/controllers/home/',
+        __DIR__ . '/controllers/destinasi/',
+        __DIR__ . '/controllers/booking/',
     ];
 
     // nyari file class di tiap direktori yang ada di $path

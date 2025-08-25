@@ -68,4 +68,30 @@ class DestinasiModel {
                 echo "Error: " . $stmt->errorInfo()[2];
             }
         }
+
+        public function getMaksimalOrangById($id){
+            $stmt = $this->conn->prepare("SELECT maksimal_orang FROM destinasi where id = :id");
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            $querry = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($querry){
+                return $querry;
+            } else {
+                echo "Error: " . $stmt->errorInfo()[2];
+            }
+        }
+
+        public function getHargaTiketById($id){
+            $stmt = $this->conn->prepare("SELECT harga_tiket FROM destinasi where id = :id");
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            $querry = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($querry){
+                return $querry;
+            } else {
+                echo "Error: " . $stmt->errorInfo()[2];
+            }
+        }
 }

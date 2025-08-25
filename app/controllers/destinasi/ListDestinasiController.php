@@ -9,4 +9,8 @@ class ListDestinasiController{
     public function getListDestinasi(){
         return $this->model->getListDestinasi();
     }
+
+    public function getRekomendasiDestinasi(){
+        return $this->model->getRekomendasiDestinasi();
+    }
 }
