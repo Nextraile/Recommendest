@@ -6,15 +6,13 @@ class BookingModel{
         $this->conn = $config->conn;
     }
 // Function addBooking
-    public function addBooking($user_id,$destinasi_id,$email,$telp,$tanggal_booking,$tanggal_berangkat,$musim,$jumlah_orang,$note,$diskon,$cashback,$total){
+    public function addBooking($user_id,$destinasi_id,$email,$telp,$tanggal_berangkat,$jumlah_orang,$note,$diskon,$cashback,$total){
         $stmt = $this->conn->prepare("INSERT INTO booking (user_id, destinasi_id, email, telp, tanggal_booking, tanggal_berangkat, musim, jumlah_orang, note, diskon, cashback, total) VALUES (:user_id, :destinasi_id, :email, :telp, :tanggal_booking, :tanggal_berangkat, :musim, :jumlah_orang, :note, :diskon, :cashback, :total)");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':destinasi_id', $destinasi_id);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':telp', $telp);
-        $stmt->bindParam(':tanggal_booking', $tanggal_booking);
         $stmt->bindParam(':tanggal_berangkat', $tanggal_berangkat);
-        $stmt->bindParam(':musim', $musim);
         $stmt->bindParam(':jumlah_orang', $jumlah_orang);
         $stmt->bindParam(':note', $note);
         $stmt->bindParam(':diskon', $diskon);

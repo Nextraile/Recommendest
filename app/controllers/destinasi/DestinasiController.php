@@ -7,6 +7,7 @@ class DestinasiController{
         }
 
         public function getDestinasiData($id){
-            return $this->model->getDestinasiById($id);
+            $destinasi = $this->model->getDestinasiById($id);
+            require_once __DIR__ . '/../../views/Destinasi.php';
         }
 }
