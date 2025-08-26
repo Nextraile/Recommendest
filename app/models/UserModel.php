@@ -1,8 +1,9 @@
 <?php
 class UserModel { 
-    public PDO $conn;
-    public function __construct(PDO $conn){
-        $this->conn = $conn;
+    private $conn;
+    public function __construct(){
+        $config = new config();
+        $this->conn = $config->conn;
     }
 
     public function addUser($nama, $saldo, $membership){
@@ -18,7 +19,7 @@ class UserModel {
         }
     }
 
-    public function getUserById($id){
+    public function getUserDataById($id){
         $stmt = $this->conn->prepare("SELECT * FROM user WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
@@ -32,7 +33,7 @@ class UserModel {
             }
         }
 
-    public function changeMembership($id, $new_membership){
+    private function changeMembership($id, $new_membership){
         $stmt = $this->conn->prepare("UPDATE user SET membership = :membership WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':membership', $new_membership);
@@ -51,7 +52,7 @@ class UserModel {
         return $result;
     }
 
-    protected function updateSaldo($id, $new_saldo){
+    private function updateSaldo($id, $new_saldo){
         $stmt = $this->conn->prepare("UPDATE user SET saldo = :saldo WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':saldo', $new_saldo);

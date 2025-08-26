@@ -7,10 +7,7 @@ class ListDestinasiController{
     }
 
     public function getListDestinasi(){
-        return $this->model->getListDestinasi();
-    }
-
-    public function getRekomendasiDestinasi(){
-        return $this->model->getRekomendasiDestinasi();
+        $destinasi = $this->model->getListDestinasi();
+        require_once __DIR__ . '/../../views/ListDestinasi.php';
     }
 }

@@ -1,8 +1,9 @@
 <?php
 class DestinasiModel { 
-    public PDO $conn;
-    public function __construct(PDO $conn){
-        $this->conn = $conn;
+    private $conn;
+    public function __construct(){
+        $config = new config();
+        $this->conn = $config->conn;
     }
 // Function addDestinasi
     public function addDestinasi($nama,$gambar,$deskripsi,$alamat,$jam_buka,$jarak,$harga_tiket){

@@ -1,8 +1,9 @@
 <?php
 class BookingModel{ 
-    public PDO $conn;
-    public function __construct(PDO $conn){
-        $this->conn = $conn;
+    private $conn;
+    public function __construct(){
+        $config = new config();
+        $this->conn = $config->conn;
     }
 // Function addBooking
     public function addBooking($user_id,$destinasi_id,$email,$telp,$tanggal_booking,$tanggal_berangkat,$musim,$jumlah_orang,$note,$diskon,$cashback,$total){
