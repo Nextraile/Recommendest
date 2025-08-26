@@ -7,7 +7,7 @@ class TopupController {
     }
 
     public function index() {
-        require_once __DIR__ . '/../../views/topup.php';
+        require_once __DIR__ . '/../../views/Topup.php';
     }
 
     public function processForm($id, $jumlah) {

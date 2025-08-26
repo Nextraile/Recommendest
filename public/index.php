@@ -8,30 +8,6 @@ $destinasi_id = $_GET['destinasi_id'];
 $booking_id = $_GET['booking_id'];
 $action = $_POST['action'];
 
-
-// switch($route)
-// {
-//     case 'home':
-//         $controller = new HomeController();
-//         $controller->index($_SESSION['user_id']);
-//         break;
-
-//     case 'list-destinasi':
-//         $controller = new DestinasiController();
-//         $controller->index();
-//         break;
-
-//     case 'topup':
-//         $controller = new User();
-//         $controller->index();
-//         break;
-
-//     default:
-//         http_response_code(404);
-//         require_once __DIR__ . '/../app/views/404.php';
-//         break;
-// }
-
 if ($method  === 'GET'){
     if (isset($route)){
         if ($route === 'home'){
