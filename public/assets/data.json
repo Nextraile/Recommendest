@@ -5,6 +5,8 @@
         "deskripsi": "Kelenteng Sam Poo Kong adalah salah satu tempat bersejarah dan religi yang terkenal di Kota Semarang, Jawa Tengah. Kelenteng ini dikenal juga dengan nama Gedung Batu, karena berada di sebuah gua batu besar yang dipercaya sebagai tempat persinggahan pertama Laksamana Cheng Ho (Sam Poo Tay Djien), seorang penjelajah Muslim Tiongkok dari Dinasti Ming, ketika berlayar ke Jawa pada abad ke-15.",
         "alamat": "Bongsari, Kec. Semarang Barat, Kota Semarang, Jawa Tengah",
         "jam_buka": "08.00–20.00",
+        "musim": "penghujan",
+        "maksimal_orang": 10,
         "jarak": 2.8,
         "harga_tiket": 10000
     },{
@@ -13,6 +15,8 @@
         "deskripsi": "Lawang Sewu adalah sebuah bangunan bersejarah yang terletak di Kota Semarang, Jawa Tengah, Indonesia. Nama 'Lawang Sewu' berarti 'Seribu Pintu' dalam bahasa Jawa, yang merujuk pada banyaknya pintu dan jendela yang ada di bangunan ini. Lawang Sewu awalnya dibangun sebagai kantor pusat perusahaan kereta api Belanda, Nederlands-Indische Spoorweg Maatschappij (NIS), pada awal abad ke-20.",
         "alamat": "Jl. Pemuda No.160, Sekayu, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah",
         "jam_buka": "11.00–20.00",
+        "musim": "penghujan",
+        "maksimal_orang": 10,
         "jarak": 0.35,
         "harga_tiket": 20000
     },{
@@ -21,6 +25,8 @@
         "deskripsi": "Pantai Marina adalah sebuah pantai yang terletak di Kota Semarang, Jawa Tengah, Indonesia. Pantai ini merupakan salah satu destinasi wisata populer di Semarang, terutama bagi warga lokal dan wisatawan yang ingin menikmati suasana pantai tanpa harus pergi jauh dari pusat kota. Pantai Marina dikenal dengan pemandangan lautnya yang indah, area rekreasi yang luas, serta berbagai fasilitas yang disediakan untuk pengunjung.",
         "alamat": "Jalan Yos Sudarso, Komplek PRPP, Tawangsari, Semarang, Jawa Tengah",
         "jam_buka": "07.00-19.00",
+        "musim": "kemarau",
+        "maksimal_orang": 50,
         "jarak": 6.6,
         "harga_tiket": 40000
     },{
@@ -29,6 +35,8 @@
         "deskripsi" :"Museum Ranggawarsita adalah Museum Negeri yang terletak di Semarang, Indonesia. Sebagai Museum Negeri, Museum Ranggawarsita secara resmi dikenal sebagai Museum Negeri Provinsi Jawa Tengah. Museum ini memamerkan koleksi etnografi yang berkaitan dengan kebudayaan Provinsi Jawa Tengah.",
         "alamat": "Jl. Abdulrahman Saleh No.1, Kalibanteng Kidul, Kec. Semarang Barat, Kota Semarang, Jawa Tengah",
         "jam_buka": "08.00–15.00",
+        "musim": "penghujan",
+        "maksimal_orang": 30,
         "jarak": 3.6,
         "harga_tiket": 10000
     },{
@@ -37,6 +45,8 @@
         "deskripsi": "Kota Lama Semarang adalah sebuah kawasan bersejarah yang terletak di pusat Kota Semarang, Jawa Tengah, Indonesia. Kawasan ini dikenal sebagai 'Little Netherland' atau 'Kampung Belanda Kecil' karena arsitektur bangunan-bangunan di sana yang mencerminkan gaya kolonial Belanda. Kota Lama Semarang memiliki nilai sejarah dan budaya yang tinggi, serta menjadi salah satu destinasi wisata populer di Semarang.",
         "alamat": "Tj. Mas, Kec. Semarang Utara, Kota Semarang, Jawa Tengah",
         "jam_buka": "Buka 24 jam",
+        "musim": "kemarau",
+        "maksimal_orang": 50,
         "jarak": 4.2,
         "harga_tiket": 0
     },{
@@ -45,6 +55,8 @@
         "deskripsi": "Masjid Agung Jawa Tengah (MAJT) adalah sebuah masjid yang terletak di Kota Semarang, Jawa Tengah, Indonesia. Masjid ini merupakan salah satu masjid terbesar di Indonesia dan menjadi ikon arsitektur Islam yang menggabungkan unsur-unsur tradisional Jawa dan modern. Masjid Agung Jawa Tengah tidak hanya berfungsi sebagai tempat ibadah, tetapi juga sebagai pusat kegiatan keagamaan, sosial, dan budaya bagi masyarakat sekitar.",
         "alamat": "Jl. Gajah Raya, Sambirejo, Kec. Gayamsari, Kota Semarang, Jawa Tengah",
         "jam_buka": "Buka 24 jam",
+        "musim": "penghujan",
+        "maksimal_orang": 50,
         "jarak": 5.9,
         "harga_tiket": 0
     },{
@@ -53,6 +65,8 @@
         "deskripsi": "Kampung Pelangi adalah sebuah kawasan pemukiman yang terletak di Kota Semarang, Jawa Tengah, Indonesia. Kampung ini dikenal karena rumah-rumahnya yang dicat dengan warna-warna cerah dan beragam, menciptakan pemandangan yang sangat menarik dan instagramable. Kampung Pelangi awalnya adalah sebuah kawasan kumuh, namun melalui inisiatif warga setempat dan dukungan dari berbagai pihak, kampung ini berhasil diubah menjadi destinasi wisata yang populer.",
         "alamat": "Jl. DR. Sutomo No.89, Randusari, Kec. Semarang Selatan, Kota Semarang, Jawa Tengah",
         "jam_buka": "Buka 24 jam",
+        "musim": "kemarau",
+        "maksimal_orang": 20,
         "jarak": 1.1,
         "harga_tiket": 0
     },{
@@ -61,6 +75,8 @@
         "deskripsi": "Kampung Batik Gedong adalah sebuah kawasan di Kota Semarang, Jawa Tengah, Indonesia, yang terkenal sebagai pusat produksi dan penjualan batik. Kampung ini terletak di daerah Gedong, yang merupakan salah satu kawasan bersejarah di Semarang. Kampung Batik Gedong menjadi destinasi wisata budaya yang menarik bagi wisatawan yang ingin belajar tentang seni batik tradisional Indonesia.",
         "alamat": "Jl. Batik No.698A, Rejomulyo, Kec. Semarang Timur, Kota Semarang, Jawa Tengah",
         "jam_buka": "08.00–17.00",
+        "musim": "penghujan",
+        "maksimal_orang": 15,
         "jarak": 4,
         "harga_tiket": 0
     },{
@@ -69,6 +85,8 @@
         "deskripsi": "Gereja Blenduk, juga dikenal sebagai GPIB Immanuel Semarang, adalah gereja Protestan yang bersejarah. Gereja ini dikenal dengan sebutan 'Blenduk' karena kubahnya yang menonjol atau 'mblenduk' dalam bahasa Jawa. Dibangun pada tahun 1753, Gereja Blenduk adalah gereja tertua di Jawa Tengah yang masih digunakan untuk ibadah hingga saat ini. ",
         "alamat": "Jl. Letjen Suprapto No.32, Kota Lama, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah",
         "jam_buka": "08.00–17.00",
+        "musim": "penghujan",
+        "maksimal_orang": 15,
         "jarak": 4.3,
         "harga_tiket": 10000
     },{
@@ -77,6 +95,8 @@
         "deskripsi": "Brown Canyon adalah sebuah destinasi wisata alam yang terletak di Kota Semarang, Jawa Tengah, Indonesia. Brown Canyon dikenal dengan pemandangan tebing-tebing curam yang berwarna coklat kemerahan, menyerupai Grand Canyon di Amerika Serikat, meskipun dalam skala yang lebih kecil. Tempat ini awalnya adalah bekas lokasi penambangan batu yang kemudian berubah menjadi objek wisata karena keindahan alamnya yang unik.",
         "alamat": "Rowosari, Kec. Tembalang, Kota Semarang, Jawa Tengah",
         "jam_buka": "Buka 24 jam",
+        "musim": "kemarau",
+        "maksimal_orang": 15,
         "jarak": 15.2,
         "harga_tiket": 0
     },{
@@ -85,6 +105,8 @@
         "deskripsi": "Pagoda Avalokitesvara adalah sebuah pagoda yang terletak di Kota Semarang, Jawa Tengah, Indonesia. Pagoda ini merupakan salah satu ikon arsitektur Tionghoa yang menonjol di Semarang dan menjadi destinasi wisata religi serta budaya yang populer. Pagoda Avalokitesvara didedikasikan untuk Avalokitesvara, bodhisattva welas asih dalam ajaran Buddha Mahayana.",
         "alamat": "Jl. Perintis Kemerdekaan, Pudakpayung, Kec. Banyumanik, Kota Semarang, Jawa Tengah",
         "jam_buka": "08.00–21.00",
+        "musim": "penghujan",
+        "maksimal_orang": 15,
         "jarak": 14,
         "harga_tiket": 0
     },{
@@ -93,6 +115,8 @@
         "deskripsi": "Semarang Zoo adalah kebun binatang yang terletak di Kota Semarang, Jawa Tengah, Indonesia. Kebun binatang ini menjadi salah satu destinasi wisata keluarga yang populer di Semarang, menawarkan berbagai koleksi satwa dari berbagai belahan dunia serta fasilitas edukasi dan rekreasi bagi pengunjung. Semarang Zoo bertujuan untuk memberikan pengalaman belajar tentang keanekaragaman hayati dan konservasi satwa kepada masyarakat.",
         "alamat": "Jl. Jend. Urip Sumoharjo No.1, Wonosari, Kec. Ngaliyan, Kota Semarang, Jawa Tengah",
         "jam_buka": "08.00–16.00",
+        "musim": "kemarau",
+        "maksimal_orang": 50,
         "jarak": 18.8,
         "harga_tiket": 25000
     },{
@@ -101,6 +125,8 @@
         "deskripsi": "Simpang Lima adalah sebuah alun-alun atau bundaran yang terletak di pusat Kota Semarang, Jawa Tengah, Indonesia. Nama 'Simpang Lima' berasal dari bentuk bundaran ini yang memiliki lima jalan utama yang bertemu di satu titik, yaitu Jalan Pandanaran, Jalan Pemuda, Jalan Gajah Mada, Jalan Ahmad Yani, dan Jalan Pahlawan. Simpang Lima merupakan salah satu ikon kota Semarang dan menjadi pusat aktivitas sosial, budaya, dan ekonomi bagi warga kota serta wisatawan.",
         "alamat": "Jl. Pandanaran No.1, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah",
         "jam_buka": "Buka 24 jam",
+        "musim": "kemarau",
+        "maksimal_orang": 50,
         "jarak": 2.8,
         "harga_tiket": 0
     },{
@@ -109,6 +135,8 @@
         "deskripsi": "Tugu Muda adalah sebuah monumen bersejarah yang terletak di pusat Kota Semarang, Jawa Tengah, Indonesia. Monumen ini didirikan untuk mengenang perjuangan para pahlawan muda dalam pertempuran lima hari di Semarang pada bulan Oktober 1945, yang merupakan bagian dari upaya mempertahankan kemerdekaan Indonesia dari penjajahan Belanda. Tugu Muda menjadi simbol keberanian, semangat patriotisme, dan pengorbanan para pemuda dalam memperjuangkan kemerdekaan bangsa.",
         "alamat": "Jl. Pandanaran, Mugassari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah",
         "jam_buka": "Buka 24 jam",
+        "musim": "kemarau",
+        "maksimal_orang": 50,
         "jarak": 0.8,
         "harga_tiket": 0
     }

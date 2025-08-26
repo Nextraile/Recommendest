@@ -2,11 +2,12 @@
 class User{
     private $model;
 
-    public function __construct(){
+    public function __construct($nama, $saldo = 0, $membership = "Non-Membership"){
         $this->model = new UserModel();
+        $this->createUser($nama, $saldo, $membership);
     }
 
-    public function createUser($nama, $saldo = 0, $membership = "non membership"){
+    public function createUser($nama, $saldo, $membership){
         return $this->model->addUser($nama, $saldo, $membership);
     }
 
