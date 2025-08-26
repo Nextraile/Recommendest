@@ -22,11 +22,11 @@ class UserModel {
         $stmt = $this->conn->prepare("SELECT * FROM user WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $querry =  $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $query =  $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         
-        if($querry){
-            return $querry;
+        if($query){
+            return $query;
             } else {
                 echo "Error: " . $stmt->errorInfo()[2];
             }

@@ -42,10 +42,10 @@ class BookingModel{
         $stmt = $this->conn->prepare("SELECT * FROM booking WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $querry = $stmt->fetch(PDO::FETCH_ASSOC);
+        $query = $stmt->fetch(PDO::FETCH_ASSOC);
         
-        if($querry){
-            return $querry;
+        if($query){
+            return $query;
         } else {
             echo "Error: " . $stmt->errorInfo()[2];
         }
@@ -55,10 +55,10 @@ class BookingModel{
         $stmt = $this->conn->prepare("SELECT id, email, telp, tanggal_berangkat, jumlah_orang, note FROM booking WHERE user_id = :user_id");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
-        $querry = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if($querry){
-            return $querry;
+        if($query){
+            return $query;
         } else {
             echo "Error: " . $stmt->errorInfo()[2];
         }

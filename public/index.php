@@ -2,12 +2,12 @@
 require_once __DIR__ . '/../app/autoload.php';
 require_once __DIR__ . '/session/session.php';
 
-$page = $_GET['page'] ?? 'home';
+$route = $_GET['route'] ?? 'home';
 
-switch($page)
+switch($route)
 {
     case 'home':
-        $controller = new HomeController();
+        $controller = new HomeController($_SESSION['user_id']);
         break;
 
     case 'rekomendasi':
