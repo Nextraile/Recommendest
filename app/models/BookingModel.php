@@ -30,7 +30,7 @@ class BookingModel{
         $stmt = $this->conn->prepare("DELETE FROM booking WHERE id = :id");
         $stmt->bindParam(':id', $id);
         if($stmt->execute()){
-            return $notif = "Booking berhasil dihapus!";
+            header('Location: index.php?route=riwayat-booking');
         } else {
             return "Error: " . $stmt->errorInfo()[2];
         }
@@ -51,15 +51,19 @@ class BookingModel{
     }
 
     public function getAllUserBookings($user_id){
-        $stmt = $this->conn->prepare("SELECT id, email, telp, tanggal_berangkat, jumlah_orang, note FROM booking WHERE user_id = :user_id");
+        $stmt = $this->conn->prepare("SELECT booking.id         AS id,
+                                            destinasi.nama             AS destinasi,
+                                            booking.tanggal_berangkat  AS tanggal_berangkat,
+                                            booking.jumlah_orang       AS jumlah_orang,
+                                            booking.total              AS total,
+                                            booking.note               AS note
+                                            FROM booking
+                                            INNER JOIN destinasi
+                                            ON booking.destinasi_id = destinasi.id
+                                            WHERE booking.user_id = :user_id");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
         $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        if($query){
-            return $query;
-        } else {
-            echo "Error: " . $stmt->errorInfo()[2];
-        }
+        return $query;
     }
 }

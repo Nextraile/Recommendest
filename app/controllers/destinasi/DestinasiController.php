@@ -6,7 +6,7 @@ class DestinasiController{
             $this->model = new DestinasiModel();
         }
 
-        public function getDestinasiData($id){
+        public function index($id){
             $destinasi = $this->model->getDestinasiById($id);
             require_once __DIR__ . '/../../views/Destinasi.php';
         }

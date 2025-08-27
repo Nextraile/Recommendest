@@ -16,7 +16,7 @@ if ($method  === 'GET'){
             exit;
         } else if ($route === 'list'){
             $controller = new ListDestinasiController();
-            $controller->getListDestinasi();
+            $controller->index();
             exit;
         } else if ($route === 'topup') {
             $controller = new TopupController();
@@ -24,7 +24,7 @@ if ($method  === 'GET'){
             exit;
         } else if ($route === 'destinasi') {
             $controller = new DestinasiController();
-            $controller->getDestinasiData($destinasi_id);
+            $controller->index($destinasi_id);
             exit;
         } else if ($route === 'booking') {
             $controller = new BookingController();
@@ -55,7 +55,7 @@ if ($method === 'POST'){
             exit;
         } else if ($action === 'topup') {
             $controller = new TopupController();
-            $controller->processForm($_SESSION['user_id'], $_POST['jumlah']);
+            $controller->processForm($_POST);
             exit;
         } else if ($action === 'booking') {
             $controller = new BookingController();
@@ -64,6 +64,10 @@ if ($method === 'POST'){
         } else if ($action === 'create_booking') {
             $controller = new BookingController();
             $controller->createBooking($_POST);
+            exit;
+        } else if ($action === 'delete_booking') {
+            $controller = new BookingController();
+            $controller->deleteBooking($_POST['id']);
             exit;
         } else {
             http_response_code(404);

@@ -63,11 +63,11 @@ class BookingController {
     {
         $errors = $this->validasi($formData);
         if (!empty($errors)) {
-            return;
+            return $errors;
+            // not done yet
         }
 
-        $booking = $this->summary($formData);
-        require_once __DIR__ . '/../../views/Summary.php';
+        $this->summary($formData);
     }
 
     public function summary($formData)
@@ -101,7 +101,7 @@ class BookingController {
         $nominal_cashback = $subtotal * $cashback;
         $total = $subtotal - $nominal_cashback;
 
-        return $booking = [
+        $booking = [
             'user_id' => $user_id,
             'destinasi_id' => $destinasi_id,
             'email' => $email,
@@ -113,6 +113,8 @@ class BookingController {
             'cashback' => $nominal_cashback,
             'total' => $total
         ];
+        
+        require_once __DIR__ . '/../../views/Summary.php';
     }
 
     public function createBooking($formData)
@@ -131,6 +133,7 @@ class BookingController {
         $saldo = $this->user_model->getSaldo($user_id);
         if ($saldo < $total) {
             return $errors = "Saldo tidak mencukupi";
+            // not done yet
         }
         $this->user_controller->kurangiSaldo($user_id, $total);
 
@@ -142,11 +145,13 @@ class BookingController {
     }
 
     public function getBooking($id){
-        return $this->model->getDetailsBooking($id);
+        $booking = $this->model->getDetailsBooking($id);
+        require_once __DIR__ . '/../../views/Booking.php';
     }
 
     public function getRiwayatBooking($user_id){
-        return $this->model->getAllUserBookings($user_id);
+        $bookings = $this->model->getAllUserBookings($user_id);
+        require_once __DIR__ . '/../../views/RiwayatBooking.php';
     }
 
     public function deleteBooking($id){

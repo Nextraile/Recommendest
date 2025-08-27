@@ -10,7 +10,13 @@ class TopupController {
         require_once __DIR__ . '/../../views/Topup.php';
     }
 
-    public function processForm($id, $jumlah) {
-        $this->model->topup($id, $jumlah);
+    public function processForm($formData) {
+        if ($formData) {
+            $user_id = $formData['id'];
+            $jumlah = $formData['jumlah'];
+
+            $this->model->topup($user_id, $jumlah);
+            header('Location: index.php');
+        }
     }
 }
