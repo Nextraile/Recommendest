@@ -1,5 +1,5 @@
 <?php
-class User{
+class User implements UserInterface{
     private $model;
 
     public function __construct(){
@@ -10,7 +10,7 @@ class User{
         return $this->model->addUser($nama, $saldo, $membership);
     }
 
-    public function getUserData($id){
+    public function getUserData($id): array{
         return $this->model->getUserDataById($id);
     }
 
