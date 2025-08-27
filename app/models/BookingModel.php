@@ -18,12 +18,7 @@ class BookingModel{
         $stmt->bindParam(':diskon', $diskon);
         $stmt->bindParam(':cashback', $cashback);
         $stmt->bindParam(':total', $total);
-
-        if($stmt->execute()){
-            echo "Booking berhasil ditambahkan.";
-        } else {
-            echo "Error: " . $stmt->errorInfo()[2];
-        }
+        $stmt->execute();
     }
 
     public function deleteBooking($id){
@@ -31,8 +26,6 @@ class BookingModel{
         $stmt->bindParam(':id', $id);
         if($stmt->execute()){
             header('Location: index.php?route=riwayat-booking');
-        } else {
-            return "Error: " . $stmt->errorInfo()[2];
         }
     }
 
@@ -42,12 +35,7 @@ class BookingModel{
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         $query = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-        if($query){
-            return $query;
-        } else {
-            echo "Error: " . $stmt->errorInfo()[2];
-        }
+        return $query;
     }
 
     public function getAllUserBookings($user_id){
