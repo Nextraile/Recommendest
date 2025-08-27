@@ -33,7 +33,7 @@ class UserModel {
             }
         }
 
-    private function changeMembership($id, $new_membership){
+    public function changeMembership($id, $new_membership){
         $stmt = $this->conn->prepare("UPDATE user SET membership = :membership WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':membership', $new_membership);
@@ -47,12 +47,13 @@ class UserModel {
     public function getSaldo($id){
         $stmt = $this->conn->prepare("SELECT saldo FROM user WHERE id = :id");
         $stmt->bindParam(':id', $id);
-        $stmt->execute();
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result;
+        if ($stmt->execute()) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
+        }
     }
 
-    private function updateSaldo($id, $new_saldo){
+    public function updateSaldo($id, $new_saldo){
         $stmt = $this->conn->prepare("UPDATE user SET saldo = :saldo WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':saldo', $new_saldo);
@@ -60,6 +61,15 @@ class UserModel {
             return "Saldo berhasil diubah.";
         } else {
             return "Error: " . $stmt->errorInfo()[2];
+        }
+    }
+
+    public function getMaksimalOrangById($id){
+        $stmt = $this->conn->prepare("SELECT maksimal_orang FROM destinasi WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        if ($stmt->execute()) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $result;
         }
     }
 }

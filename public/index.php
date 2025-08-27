@@ -36,7 +36,7 @@ if ($method  === 'GET'){
             exit;
         } else if ($route === 'detail-booking') {
             $controller = new BookingController();
-            $controller->getDetailsBooking($booking_id);
+            $controller->getBooking($booking_id);
             exit;
 
         } else {

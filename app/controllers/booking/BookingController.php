@@ -20,11 +20,13 @@ class BookingController {
 
         $errors = [];
 
+        $destinasi_id = $rawData['destinasi_id'];
         $email = $rawData['email'];
         $telp = $rawData['telp'];
         $tanggal_berangkat = $rawData['tanggal_berangkat'];
         $jumlah_orang = $rawData['jumlah_orang'];
         $note = $rawData['note'];
+        $tanggal_booking    = date('Y-m-d H:i:s');
 
         // validate input
         if (empty($email) || empty($telp)){
@@ -40,8 +42,6 @@ class BookingController {
         }
 
         // set booking and departure date
-        $tanggal_booking    = date('Y-m-d H:i:s');
-        $tanggal_berangkat  = $_POST['tanggal_berangkat'] ?? null;
         $today = new DateTime('today');
         $berangkat = new DateTime($tanggal_berangkat);
 
@@ -51,7 +51,7 @@ class BookingController {
         }
 
         // validate maximum capacity
-        $maksimal_orang = $this->model->getMaksimalOrangById($destinasi_id);
+        $maksimal_orang = $this->user_model->getMaksimalOrangById($destinasi_id);
         if ($jumlah_orang > $maksimal_orang) {
             $errors = "Jumlah orang melebihi kapasitas maksimal destinasi";
         }
@@ -143,6 +143,10 @@ class BookingController {
 
     public function getBooking($id){
         return $this->model->getDetailsBooking($id);
+    }
+
+    public function getRiwayatBooking($user_id){
+        return $this->model->getAllUserBookings($user_id);
     }
 
     public function deleteBooking($id){
