@@ -43,14 +43,13 @@ class inputDataDestinasi {
         }
         }
     }
-    public function __destruct(){
-        // PDO does not require explicit close; connection closes automatically.
-    }
+    public function __destruct(){}
 }
 
-$obj = new inputDataDestinasi($conn);
+$obj = new inputDataDestinasi();
 $UserNonMembership = new User();
-$UserSilver = new UserSilver();
-$UserGold = new UserGold();
+$UserNonMembership->createUser("User 1");
+$UserSilver = new UserSilver("User 2");
+$UserGold = new UserGold("User 3");
 
 $obj->run();

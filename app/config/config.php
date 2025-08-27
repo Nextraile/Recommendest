@@ -19,4 +19,10 @@ class config {
             die("Connection failed: " . $e->getMessage());
         }
     }
+
+    public function __destruct() {
+        if ($this->conn) {
+            $this->conn = null;
+        }
+    }
 }
