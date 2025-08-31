@@ -25,13 +25,13 @@ class User implements UserInterface{
     }
 
     public function tambahSaldo($id, $jumlah){
-        $current_saldo = $this->model->getSaldo($id);
+        $current_saldo = (int)$this->model->getSaldo($id);
         $new_saldo = $current_saldo + $jumlah;
         $this->model->updateSaldo($id, $new_saldo);
     }
 
     public function kurangiSaldo($id, $jumlah){
-        $current_saldo = $this->model->getSaldo($id);
+        $current_saldo = (int)$this->model->getSaldo($id);
         $new_saldo = $current_saldo - $jumlah;
         $this->model->updateSaldo($id, $new_saldo);
     }

@@ -17,13 +17,13 @@ class RekomendasiController
             $jarak = $formData['jarak'];
             $jumlah_orang = $formData['jumlah_orang'];
 
-            $this->makeRecommendation($budget, $musim, $jarak, $jumlah_orang);
+            $this->makeRecommendation($musim, $jarak, $jumlah_orang);
         }
     }
 
-    public function makeRecommendation($budget, $musim, $jarak, $jumlah_orang)
+    public function makeRecommendation($musim, $jarak, $jumlah_orang)
     {
-        $recommendations = $this->model->getRekomendasiDestinasi($budget, $musim, $jarak, $jumlah_orang);
-        require_once __DIR__ . '/../../views/ListDestinasi.php';
+        $recommendations = $this->model->getRekomendasiDestinasi($musim, $jarak, $jumlah_orang);
+        require_once __DIR__ . '/../../views/Rekomendasi.php';
     }
 }

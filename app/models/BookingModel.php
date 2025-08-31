@@ -7,7 +7,7 @@ class BookingModel{
     }
 // Function addBooking
     public function addBooking($user_id,$destinasi_id,$email,$telp,$tanggal_berangkat,$jumlah_orang,$note,$diskon,$cashback,$total){
-        $stmt = $this->conn->prepare("INSERT INTO booking (user_id, destinasi_id, email, telp, tanggal_booking, tanggal_berangkat, musim, jumlah_orang, note, diskon, cashback, total) VALUES (:user_id, :destinasi_id, :email, :telp, :tanggal_booking, :tanggal_berangkat, :musim, :jumlah_orang, :note, :diskon, :cashback, :total)");
+        $stmt = $this->conn->prepare("INSERT INTO booking (user_id, destinasi_id, email, telp, tanggal_berangkat, jumlah_orang, note, diskon, cashback, total) VALUES (:user_id, :destinasi_id, :email, :telp, :tanggal_berangkat, :jumlah_orang, :note, :diskon, :cashback, :total)");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':destinasi_id', $destinasi_id);
         $stmt->bindParam(':email', $email);
@@ -39,6 +39,7 @@ class BookingModel{
 
     public function getAllUserBookings($user_id){
         $stmt = $this->conn->prepare("SELECT booking.id         AS id,
+                                            destinasi.id             AS destinasi_id,
                                             destinasi.nama             AS destinasi,
                                             booking.tanggal_berangkat  AS tanggal_berangkat,
                                             booking.jumlah_orang       AS jumlah_orang,

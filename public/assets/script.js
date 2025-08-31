@@ -169,26 +169,27 @@ function showNotification(message, type = "info") {
     }, 300)
   }, 5000)
 }
-
+// LOADING STATES HAMA, FORMNYA JADI GA KESUBMIT TELASO
 function initializeInteractiveElements() {
-  // Add loading states to buttons
-  const submitButtons = document.querySelectorAll('button[type="submit"]')
-  submitButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const form = this.closest("form")
-      if (form && form.checkValidity()) {
-        const originalText = this.textContent
-        this.innerHTML = '<span class="loading"></span> Memproses...'
-        this.disabled = true
+//   // Add loading states to buttons
+//   const submitButtons = document.querySelectorAll('button[type="submit"]')
+//   submitButtons.forEach((button) => {
+//     button.addEventListener("click", function () {
+//       const form = this.closest("form")
+//       if (form && form.checkValidity()) {
+//         const originalText = this.textContent
+//         this.innerHTML = '<span class="loading"></span> Memproses...'
+//         this.disabled = true
 
-        // Re-enable after form submission (in case of validation errors)
-        setTimeout(() => {
-          this.textContent = originalText
-          this.disabled = false
-        }, 3000)
-      }
-    })
-  })
+//         // Re-enable after form submission (in case of validation errors)
+//         setTimeout(() => {
+//           this.textContent = originalText
+//           this.disabled = false
+//         }, 3000)
+//       }
+//     })
+//   })
+// LOADING STATES HAMA, FORMNYA JADI GA KESUBMIT TELASO
 
   // Add smooth scrolling to anchor links
   const anchorLinks = document.querySelectorAll('a[href^="#"]')

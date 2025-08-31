@@ -53,33 +53,33 @@ include 'include/Navbar.php';
                     <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                             <div class="flex-1 mb-4 md:mb-0">
-                                <h3 class="text-xl font-semibold text-dark mb-2"><?php echo $booking['destinasi']; ?></h3>
+                                <h3 class="text-xl font-semibold text-dark mb-2"><?= $booking['destinasi']; ?></h3>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
                                     <div>
                                         <span class="font-medium">Tanggal:</span>
-                                        <span><?php echo date('d F Y', strtotime($booking['tanggal_berangkat'])); ?></span>
+                                        <span><?= date('d F Y', strtotime($booking['tanggal_berangkat'])); ?></span>
                                     </div>
                                     <div>
                                         <span class="font-medium">Jumlah:</span>
-                                        <span><?php echo $booking['jumlah_orang']; ?> orang</span>
+                                        <span><?= $booking['jumlah_orang']; ?> orang</span>
                                     </div>
                                     <div>
                                         <span class="font-medium">Total:</span>
-                                        <span class="text-accent font-semibold">Rp <?php echo number_format($booking['total'], 0, ',', '.'); ?></span>
+                                        <span class="text-accent font-semibold">Rp <?= number_format($booking['total'], 0, ',', '.'); ?></span>
                                     </div>
                                 </div>
                                 <?php if (!empty($booking['note'])): ?>
                                     <p class="text-sm text-gray-500 mt-2">
-                                        <span class="font-medium">Catatan:</span> <?php echo $booking['note']; ?>
+                                        <span class="font-medium">Catatan:</span> <?= $booking['note']; ?>
                                     </p>
                                 <?php endif; ?>
                             </div>
                             <div class="flex gap-2">
-                                <button onclick="window.location.href='index.php?route=detail-booking&id=<?php echo $booking['id']; ?>'" 
+                                <button onclick="window.location.href='index.php?route=detail-booking&booking_id=<?= $booking['destinasi_id']; ?>'" 
                                         class="bg-primary text-white py-2 px-4 rounded-lg hover:bg-opacity-90 transition-colors">
                                     Detail
                                 </button>
-                                <button onclick="cancelBooking(<?php echo $booking['id']; ?>)" 
+                                <button onclick="cancelBooking(<?= $booking['id']; ?>)" 
                                         class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">
                                     Batalkan
                                 </button>

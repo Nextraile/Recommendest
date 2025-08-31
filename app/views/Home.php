@@ -15,15 +15,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="text-center p-4 bg-gray-50 rounded-lg">
                         <h3 class="text-lg font-semibold text-dark">Nama</h3>
-                        <p class="text-primary font-bold text-xl"><?php echo $_SESSION['nama'] ?? 'John Doe'; ?></p>
+                        <p class="text-primary font-bold text-xl"><?= $_SESSION['nama'] ?? 'John Doe'; ?></p>
                     </div>
                     <div class="text-center p-4 bg-gray-50 rounded-lg">
                         <h3 class="text-lg font-semibold text-dark">Saldo</h3>
-                        <p class="text-accent font-bold text-xl">Rp <?php echo number_format($_SESSION['saldo'] ?? 0, 0, ',', '.'); ?></p>
+                        <p class="text-accent font-bold text-xl">Rp <?= number_format($_SESSION['saldo'] ?? 0, 0, ',', '.'); ?></p>
                     </div>
                     <div class="text-center p-4 bg-gray-50 rounded-lg">
                         <h3 class="text-lg font-semibold text-dark">Membership</h3>
-                        <p class="text-primary font-bold text-xl"><?php echo $_SESSION['membership'] ?? 'Regular'; ?></p>
+                        <p class="text-primary font-bold text-xl"><?= $_SESSION['membership'] ?? 'Regular'; ?></p>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                             <input type="hidden" name="action" value="rekomendasi">
                             <label class="block text-sm font-medium text-dark mb-2">Budget (Rp)</label>
                             <div class="px-4">
-                                <input type="range" id="budget" name="budget" min="50000" max="10000000" step="50000" value="50000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                                <input required type="range" id="budget" name="budget" min="50000" max="10000000" step="50000" value="50000" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
                                 <div class="flex justify-between text-sm text-gray-500 mt-1">
                                     <span>50K</span>
                                     <span id="budget-value" class="font-semibold text-primary">50.000</span>
@@ -49,12 +49,12 @@
                             <label class="block text-sm font-medium text-dark mb-2">Musim</label>
                             <div class="grid grid-cols-2 gap-4">
                                 <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-primary active:border-primary transition-colors">
-                                    <input type="radio" name="musim" value="Kemarau" class="sr-only">
+                                    <input required type="radio" name="musim" value="Kemarau" class="sr-only">
                                     <div class="radio-custom mr-3"></div>
                                     <span class="text-dark font-medium">Kemarau</span>
                                 </label>
                                 <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-primary active:border-primarytransition-colors">
-                                    <input type="radio" name="musim" value="Penghujan" class="sr-only">
+                                    <input required type="radio" name="musim" value="Penghujan" class="sr-only">
                                     <div class="radio-custom mr-3"></div>
                                     <span class="text-dark font-medium">Penghujan</span>
                                 </label>
@@ -64,7 +64,7 @@
                         <div>
                             <label class="block text-sm font-medium text-dark mb-2">Jarak Maksimal (km)</label>
                             <div class="px-4">
-                                <input type="range" id="jarak" name="jarak" min="0" max="50" step="5" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+                                <input required type="range" id="jarak" name="jarak" min="0" max="50" step="5" value="0" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
                                 <div class="flex justify-between text-sm text-gray-500 mt-1">
                                     <span>0</span>
                                     <span id="jarak-value" class="font-semibold text-primary">0</span>
@@ -74,9 +74,9 @@
                         </div>
 
                         <div>
-                            <label for="jumlah" class="block text-sm font-medium text-dark mb-2">Jumlah Orang</label>
+                            <label for="jumlah_orang" class="block text-sm font-medium text-dark mb-2">Jumlah Orang</label>
                             <div class="relative">
-                                <input type="number" id="jumlah" name="jumlah_orang" min="1" required 
+                                <input type="number" id="jumlah_orang" name="jumlah_orang" min="1" required 
                                 class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
                             </div>
                         </div>

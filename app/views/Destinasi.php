@@ -25,13 +25,13 @@ include 'include/Navbar.php';
 
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
             <div class="relative h-96">
-                <img src="<?= BASE_URL ?>/assets/images/<?php echo $destinasi['gambar']; ?>"" alt="<?php echo $destinasi['nama']; ?>" 
+                <img src="<?= BASE_URL ?>/assets/images/<?= $destinasi['gambar']; ?>"" alt="<?= $destinasi['nama']; ?>" 
                      class="w-full h-full object-cover"
                      onerror="this.src='/placeholder.svg?height=384&width=800';">
                 <div class="absolute inset-0 bg-black bg-opacity-30 flex items-end">
                     <div class="p-8">
-                        <h1 class="text-4xl font-bold text-white mb-2"><?php echo $destinasi['nama']; ?></h1>
-                        <p class="text-white text-lg opacity-90"><?php echo $destinasi['alamat']; ?></p>
+                        <h1 class="text-4xl font-bold text-white mb-2"><?= $destinasi['nama']; ?></h1>
+                        <p class="text-white text-lg opacity-90"><?= $destinasi['alamat']; ?></p>
                     </div>
                 </div>
             </div>
@@ -41,16 +41,16 @@ include 'include/Navbar.php';
                      Main Content 
                     <div class="lg:col-span-2">
                         <h2 class="text-2xl font-bold text-dark mb-4">Deskripsi</h2>
-                        <p class="text-gray-700 leading-relaxed mb-6"><?php echo $destinasi['deskripsi']; ?></p>
+                        <p class="text-gray-700 leading-relaxed mb-6"><?= $destinasi['deskripsi']; ?></p>
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <h3 class="font-semibold text-dark mb-2">Jam Operasional</h3>
-                                <p class="text-gray-700"><?php echo $destinasi['jam_buka']; ?></p>
+                                <p class="text-gray-700"><?= $destinasi['jam_buka']; ?></p>
                             </div>
                             <div class="bg-gray-50 p-4 rounded-lg">
                                 <h3 class="font-semibold text-dark mb-2">Jarak dari Balai Kota</h3>
-                                <p class="text-gray-700"><?php echo $destinasi['jarak']; ?> km</p>
+                                <p class="text-gray-700"><?= $destinasi['jarak']; ?> km</p>
                             </div>
                         </div>
                     </div>
@@ -61,14 +61,14 @@ include 'include/Navbar.php';
                             <div class="space-y-3 mb-6">
                                 <div class="flex justify-between">
                                     <span>Harga Tiket:</span>
-                                    <span class="font-bold text-accent">Rp <?php echo number_format($destinasi['harga_tiket'], 0, ',', '.'); ?></span>
+                                    <span class="font-bold text-accent">Rp <?= number_format($destinasi['harga_tiket'], 0, ',', '.'); ?></span>
                                 </div>
                                 <div class="flex justify-between">
                                     <span>Jarak:</span>
-                                    <span><?php echo $destinasi['jarak']; ?> km</span>
+                                    <span><?= $destinasi['jarak']; ?> km</span>
                                 </div>
                             </div>
-                            <button onclick="window.location.href='index.php?route=booking&destinasi_id=<?php echo $destinasi['id']; ?>'" 
+                            <button onclick="window.location.href='index.php?route=booking&destinasi_id=<?= $destinasi['id']; ?>'" 
                                     class="w-full bg-accent text-dark py-3 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-colors">
                                 Booking Sekarang
                             </button>

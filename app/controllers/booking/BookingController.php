@@ -72,7 +72,6 @@ class BookingController {
 
     public function summary($formData)
     {
-        $user_id = $formData['user_id'];
         $destinasi_id = $formData['destinasi_id'];
         $email = $formData['email'];
         $telp = $formData['telp'];
@@ -103,6 +102,7 @@ class BookingController {
         $total = $subtotal - $nominal_cashback;
 
         $booking = [
+            'destinasi_id' => $destinasi_id,
             'destinasi_nama' => $destinasi_nama,
             'email' => $email,
             'telp' => $telp,
@@ -121,22 +121,22 @@ class BookingController {
 
     public function createBooking($formData)
     {
-        $user_id = $formData['user_id'];
-        $destinasi_id = $formData['destinasi_id'];
+        $user_id = (int)$formData['user_id'];
+        $destinasi_id = (int)$formData['destinasi_id'];
         $email = $formData['email'];
         $telp = $formData['telp'];
         $tanggal_berangkat = $formData['tanggal_berangkat'];
-        $jumlah_orang = $formData['jumlah_orang'];
-        $note = $formData['note'];
-        $diskon = $formData['diskon'];
-        $cashback = $formData['cashback'];
-        $total = $formData['total'];
+        $jumlah_orang = (int)$formData['jumlah_orang'];
+        $note = $formData['note'] ?? '';
+        $diskon = (int)$formData['diskon'];
+        $cashback = (int)$formData['cashback'];
+        $total = (int)$formData['total'];
 
         $saldo = $this->user_model->getSaldo($user_id);
         if ($saldo < $total) {
             return $errors = "Saldo tidak mencukupi";
-            // not done yet
         }
+
         $this->user_controller->kurangiSaldo($user_id, $total);
 
         $this->model->addBooking($user_id, $destinasi_id, $email, $telp,

@@ -23,7 +23,7 @@ CREATE TABLE `booking` (
 	`user_id` INTEGER NOT NULL UNIQUE,
 	`destinasi_id` INTEGER NOT NULL UNIQUE,
 	`email` VARCHAR(100) NOT NULL,
-	`telp` INTEGER NOT NULL,
+	`telp` VARCHAR(20) NOT NULL,
 	`tanggal_booking` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	`tanggal_berangkat` DATE NOT NULL,
 	`jumlah_orang` INTEGER NOT NULL,

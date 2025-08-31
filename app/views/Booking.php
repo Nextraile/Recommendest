@@ -10,7 +10,7 @@ $destinasi_id = $_GET['destinasi_id'] ?? 1;
         <?php if (isset($errors) && !empty($errors)): ?>
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
                 <?php foreach ($errors as $error): ?>
-                    <p><?php echo $error; ?></p>
+                    <p><?= $error; ?></p>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
@@ -18,9 +18,9 @@ $destinasi_id = $_GET['destinasi_id'] ?? 1;
         <div class="bg-white rounded-lg shadow-lg p-8">
             <form method="POST" action="index.php" class="space-y-6">
                 <input type="hidden" name="action" value="booking">
-                <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?? 1; ?>">
-                <input type="hidden" name="destinasi_id" value="<?php echo $destinasi_id; ?>">
-                <input type="hidden" name="membership" value="<?php echo $_SESSION['membership'] ?? 'Non-Membership'; ?>">
+                <input type="hidden" name="user_id" value="<?= $_SESSION['user_id'] ?? 1; ?>">
+                <input type="hidden" name="destinasi_id" value="<?= $destinasi_id; ?>">
+                <input type="hidden" name="membership" value="<?= $_SESSION['membership'] ?? 'Non-Membership'; ?>">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -39,7 +39,7 @@ $destinasi_id = $_GET['destinasi_id'] ?? 1;
                     <div>
                         <label for="tanggal_berangkat" class="block text-sm font-medium text-dark mb-2">Tanggal Berangkat</label>
                         <input type="date" id="tanggal_berangkat" name="tanggal_berangkat" required 
-                               min="<?php echo date('Y-m-d'); ?>"
+                               min="<?= date('Y-m-d'); ?>"
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
                     </div>
                     <div>

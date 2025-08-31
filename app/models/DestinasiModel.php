@@ -32,19 +32,22 @@ class DestinasiModel {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getRekomendasiDestinasi($budget, $musim, $jarak, $maksimal_orang){
+    public function getRekomendasiDestinasi( $musim, $jarak, $maksimal_orang){
         $stmt = $this->conn->prepare
         ("SELECT id, nama, gambar, jarak, harga_tiket FROM destinasi 
-            WHERE budget <= :budget_user
-            AND musim = :musim
+            WHERE musim = :musim
             AND jarak <= :jarak_user
             AND maksimal_orang <= :maksimal_orang_user");
-        $stmt->bindParam(':budget_user', $budget);
+        // $stmt->bindParam(':budget_user', $budget);
         $stmt->bindParam(':musim', $musim);
         $stmt->bindParam(':jarak_user', $jarak);
         $stmt->bindParam(':maksimal_orang_user', $maksimal_orang);
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $recommendations = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (empty($recommendations)) {
+            return $recommendations = [];
+        }
+        return $recommendations;
     }
 
     public function getMaksimalOrangById($id){

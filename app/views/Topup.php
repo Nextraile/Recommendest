@@ -13,8 +13,10 @@
                 </div>
             <?php endif; ?>
 
-            <form method="POST" action="topup.php" class="space-y-6">
+            <form method="POST" action="index.php" class="space-y-6">
                 <div>
+                    <input type="hidden" name="action" value="topup">
+                    <input type="hidden" name="id" value="<?= $_SESSION['user_id']; ?>">
                     <label for="jumlah" class="block text-sm font-medium text-dark mb-2">Jumlah Top Up</label>
                     <div class="relative">
                         <span class="absolute left-3 top-3 text-gray-500">Rp</span>
@@ -37,16 +39,6 @@
                     <button type="button" onclick="setAmount(500000)" class="amount-btn bg-gray-100 hover:bg-primary hover:text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors">
                         500K
                     </button>
-                </div>
-
-                <div>
-                    <label for="metode" class="block text-sm font-medium text-dark mb-2">Metode Pembayaran</label>
-                    <select id="metode" name="metode" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                        <option value="">Pilih Metode Pembayaran</option>
-                        <option value="bank_transfer">Transfer Bank</option>
-                        <option value="e_wallet">E-Wallet</option>
-                        <option value="credit_card">Kartu Kredit</option>
-                    </select>
                 </div>
 
                 <button type="submit" class="w-full bg-accent text-dark py-3 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-colors">
