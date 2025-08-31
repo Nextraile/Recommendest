@@ -53,7 +53,7 @@ include 'include/Navbar.php';
                     <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                             <div class="flex-1 mb-4 md:mb-0">
-                                <h3 class="text-xl font-semibold text-dark mb-2"><?= $booking['destinasi']; ?></h3>
+                                <h3 class="text-xl font-semibold text-dark mb-2"><?= $booking['destinasi_nama']; ?></h3>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
                                     <div>
                                         <span class="font-medium">Tanggal:</span>
@@ -75,14 +75,17 @@ include 'include/Navbar.php';
                                 <?php endif; ?>
                             </div>
                             <div class="flex gap-2">
-                                <button onclick="window.location.href='index.php?route=detail-booking&booking_id=<?= $booking['destinasi_id']; ?>'" 
+                                <button onclick="window.location.href='index.php?route=detail-booking&booking_id=<?= $booking['id']; ?>'" 
                                         class="bg-primary text-white py-2 px-4 rounded-lg hover:bg-opacity-90 transition-colors">
                                     Detail
                                 </button>
-                                <button onclick="cancelBooking(<?= $booking['id']; ?>)" 
-                                        class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">
-                                    Batalkan
-                                </button>
+                                <form method="POST" action="index.php?route=riwayat-booking" onsubmit="return confirm('Apakah Anda yakin ingin membatalkan booking ini?');">
+                                    <input type="hidden" name="action" value="delete_booking">
+                                    <input type="hidden" name="id" value="<?= $booking['id']; ?>">
+                                    <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">
+                                     Batalkan
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

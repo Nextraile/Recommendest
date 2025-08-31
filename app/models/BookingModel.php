@@ -31,7 +31,7 @@ class BookingModel{
 
 // Function getBooking
     public function getDetailsBooking($id){
-        $stmt = $this->conn->prepare("SELECT * FROM booking WHERE id = :id");
+        $stmt = $this->conn->prepare("SELECT destinasi.nama AS destinasi_nama, booking.* FROM booking INNER JOIN destinasi ON booking.destinasi_id = destinasi.id WHERE booking.id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -40,7 +40,7 @@ class BookingModel{
     public function getAllUserBookings($user_id){
         $stmt = $this->conn->prepare("SELECT booking.id         AS id,
                                             destinasi.id             AS destinasi_id,
-                                            destinasi.nama             AS destinasi,
+                                            destinasi.nama             AS destinasi_nama,
                                             booking.tanggal_berangkat  AS tanggal_berangkat,
                                             booking.jumlah_orang       AS jumlah_orang,
                                             booking.total              AS total,

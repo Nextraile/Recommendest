@@ -107,12 +107,14 @@ include 'include/Navbar.php';
             </div>
 
             <div class="mt-6">
-                <div class="flex gap-4">
-                    <button onclick="cancelBooking(<?= $booking['id']; ?>)" 
-                            class="flex-1 bg-red-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-600 transition-colors">
-                        Batalkan Booking
-                    </button>
-                </div>
+                <form class="flex gap-4" method="POST" action="index.php?route=riwayat-booking" onsubmit="return confirm('Apakah Anda yakin ingin membatalkan booking ini?');">
+                <input type="hidden" name="action" value="delete_booking">
+                <input type="hidden" name="id" value="<?= $booking['id']; ?>">
+                <button type="submit" 
+                class="flex-1 bg-red-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-red-600 transition-colors">
+                Batalkan Booking
+                </button>
+                </form>
             </div>
         </div>
     </div>
