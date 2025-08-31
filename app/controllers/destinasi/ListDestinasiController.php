@@ -7,7 +7,7 @@ class ListDestinasiController{
     }
 
     public function index(){
-        $destinasi = $this->model->getListDestinasi();
+        $list_destinasi = $this->model->getListDestinasi();
         require_once __DIR__ . '/../../views/ListDestinasi.php';
     }
 }

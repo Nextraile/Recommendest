@@ -1,12 +1,14 @@
 <?php
-require_once __DIR__ . '/../app/autoload.php';
 require_once __DIR__ . '/session/session.php';
+require_once __DIR__ . '/../app/autoload.php';
+// define('BASE_URL', 'http://localhost/Recommendest/public');
+define('BASE_URL', 'http://recommendest.com');
 
 $method = $_SERVER['REQUEST_METHOD'];
 $route = $_GET['route'] ?? 'home';
-$destinasi_id = $_GET['destinasi_id'];
-$booking_id = $_GET['booking_id'];
-$action = $_POST['action'];
+$destinasi_id = $_GET['destinasi_id'] ?? '';
+$booking_id = $_GET['booking_id'] ?? '';
+$action = $_POST['action'] ?? '';
 
 if ($method  === 'GET'){
     if (isset($route)){

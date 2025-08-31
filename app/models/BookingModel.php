@@ -34,8 +34,7 @@ class BookingModel{
         $stmt = $this->conn->prepare("SELECT * FROM booking WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $query = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $query;
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getAllUserBookings($user_id){
@@ -51,7 +50,6 @@ class BookingModel{
                                             WHERE booking.user_id = :user_id");
         $stmt->bindParam(':user_id', $user_id);
         $stmt->execute();
-        $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $query;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

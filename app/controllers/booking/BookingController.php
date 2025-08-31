@@ -82,6 +82,7 @@ class BookingController {
         $note = $formData['note'];
 
         $harga_tiket_per_orang = $this->destinasi_model->getHargaTiketById($destinasi_id);
+        $destinasi_nama = $this->destinasi_model->getNamaById($destinasi_id);
 
         if ($membership == "Silver") {
             $persentase_diskon = 10;
@@ -102,13 +103,14 @@ class BookingController {
         $total = $subtotal - $nominal_cashback;
 
         $booking = [
-            'user_id' => $user_id,
-            'destinasi_id' => $destinasi_id,
+            'destinasi_nama' => $destinasi_nama,
             'email' => $email,
             'telp' => $telp,
             'tanggal_berangkat' => $tanggal_berangkat,
             'jumlah_orang' => $jumlah_orang,
             'note' => $note,
+            'harga_tiket' => $harga_tiket_per_orang,
+            'subtotal' => $subtotal,
             'diskon' => $diskon * 100,
             'cashback' => $nominal_cashback,
             'total' => $total
@@ -146,7 +148,7 @@ class BookingController {
 
     public function getBooking($id){
         $booking = $this->model->getDetailsBooking($id);
-        require_once __DIR__ . '/../../views/Booking.php';
+        require_once __DIR__ . '/../../views/DetailBooking.php';
     }
 
     public function getRiwayatBooking($user_id){

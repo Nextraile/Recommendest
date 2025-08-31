@@ -1,7 +1,6 @@
 <?php
 class HomeController{
 
-    private $data = [];
     private $model;
 
     public function __construct()
@@ -11,18 +10,17 @@ class HomeController{
 
     public function index($id)
     {
-        $this->getUserDataById($id);
-        $user_data = $this->data;
-        require_once __DIR__ . '/../../views/homepage.php';
-    }
+        $user_data = $this->model->getUserDataById($id);
 
-    public function getUserDataById($id)
-    {
-        $this->data = $this->model->getUserDataById($id);
-        $id = $this->data['id'] = $_SESSION['user_id'];
-        $nama = $this->data['nama'] = $_SESSION['nama'];
-        $saldo = $this->data['saldo'] = $_SESSION['saldo'];
-        $membership = $this->data['membership'] = $_SESSION['membership'];
-    }
+        foreach ($user_data as $key => $value) {
+            $_SESSION[$key] = $value;
+        }
 
+        $user_data['id'] = $_SESSION['user_id'];
+        $user_data['nama'] = $_SESSION['nama'];
+        $user_data['saldo'] = $_SESSION['saldo'];
+        $user_data['membership'] = $_SESSION['membership'];
+
+        require_once __DIR__ . '/../../views/Home.php';
+    }
 }

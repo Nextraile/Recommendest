@@ -18,10 +18,7 @@ class UserModel {
         $stmt = $this->conn->prepare("SELECT * FROM user WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $query =  $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if($query){
-            return $query;
-        }
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function changeMembership($id, $new_membership){
@@ -35,8 +32,7 @@ class UserModel {
         $stmt = $this->conn->prepare("SELECT saldo FROM user WHERE id = :id");
         $stmt->bindParam(':id', $id);
         if ($stmt->execute()) {
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result;
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }
 
@@ -51,8 +47,7 @@ class UserModel {
         $stmt = $this->conn->prepare("SELECT maksimal_orang FROM destinasi WHERE id = :id");
         $stmt->bindParam(':id', $id);
         if ($stmt->execute()) {
-            $query = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $query;
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }
     }
 }

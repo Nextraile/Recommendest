@@ -22,22 +22,20 @@ class DestinasiModel {
         $stmt = $this->conn->prepare("SELECT * FROM destinasi WHERE id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $query = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $query;
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     // Funtion getAllDestinasi
     public function getListDestinasi(){
         $stmt = $this->conn->prepare("SELECT id, nama, gambar, jarak, harga_tiket FROM destinasi");
         $stmt->execute();
-        $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $query;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getRekomendasiDestinasi($budget, $musim, $jarak, $maksimal_orang){
         $stmt = $this->conn->prepare
         ("SELECT id, nama, gambar, jarak, harga_tiket FROM destinasi 
-            WHERE budget_minimal <= :budget_user
+            WHERE budget <= :budget_user
             AND musim = :musim
             AND jarak <= :jarak_user
             AND maksimal_orang <= :maksimal_orang_user");
@@ -46,23 +44,27 @@ class DestinasiModel {
         $stmt->bindParam(':jarak_user', $jarak);
         $stmt->bindParam(':maksimal_orang_user', $maksimal_orang);
         $stmt->execute();
-        $query = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $query;
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getMaksimalOrangById($id){
         $stmt = $this->conn->prepare("SELECT maksimal_orang FROM destinasi where id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $query = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $query;
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function getHargaTiketById($id){
+    public function getHargaTiketById($id): int{
         $stmt = $this->conn->prepare("SELECT harga_tiket FROM destinasi where id = :id");
         $stmt->bindParam(':id', $id);
         $stmt->execute();
-        $query = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $query;
+        return (int) $stmt->fetchColumn();
+    }
+
+    public function getNamaById($id): string{
+        $stmt = $this->conn->prepare("SELECT nama FROM destinasi where id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return (string) $stmt->fetchColumn();
     }
 }
