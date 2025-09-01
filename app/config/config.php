@@ -3,7 +3,7 @@
 class config {
     private $host       = "localhost",
             $user       = "root",
-            $password   = "mineluxmc01",
+            $password   = "LuRidwan85!",
             $database   = "recommendest";
     public  $conn;
 

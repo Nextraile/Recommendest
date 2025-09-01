@@ -32,7 +32,8 @@ class UserModel {
         $stmt = $this->conn->prepare("SELECT saldo FROM user WHERE id = :id");
         $stmt->bindParam(':id', $id);
         if ($stmt->execute()) {
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            $query = $stmt->fetch(PDO::FETCH_ASSOC);
+            return (int)($query['saldo'] ?? 0);
         }
     }
 

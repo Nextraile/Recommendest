@@ -84,19 +84,8 @@ include 'include/Navbar.php';
             </div>
 
             <div class="bg-gray-50 p-6 rounded-lg mb-8">
-                <h2 class="text-xl font-semibold text-dark mb-4">Detail Pembayaran</h2>
                 <div class="space-y-2">
                     <div class="flex justify-between">
-                        <span>Subtotal</span>
-                        <span>Rp <?= number_format($booking['total'] + ($booking['total'] * $booking['diskon'] / 100) + $booking['cashback'], 0, ',', '.'); ?></span>
-                    </div>
-                    <div class="flex justify-between text-accent">
-                        <span>Diskon (<?= $booking['diskon']; ?>%)</span>
-                        <span>-Rp <?= number_format($booking['total'] * $booking['diskon'] / 100, 0, ',', '.'); ?></span>
-                    </div>
-                    <div class="flex justify-between text-accent">
-                        <span>Cashback</span>
-                        <span>-Rp <?= number_format($booking['cashback'], 0, ',', '.'); ?></span>
                     </div>
                     <hr class="my-2">
                     <div class="flex justify-between text-lg font-bold text-dark">

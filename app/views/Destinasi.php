@@ -38,7 +38,6 @@ include 'include/Navbar.php';
 
             <div class="p-8">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                     Main Content 
                     <div class="lg:col-span-2">
                         <h2 class="text-2xl font-bold text-dark mb-4">Deskripsi</h2>
                         <p class="text-gray-700 leading-relaxed mb-6"><?= $destinasi['deskripsi']; ?></p>
