@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/session/session.php';
 require_once __DIR__ . '/../app/autoload.php';
-// define('BASE_URL', 'http://localhost/Recommendest/public');
-define('BASE_URL', 'http://recommendest.com');
+define('BASE_URL', 'http://localhost/Recommendest/public');
+// define('BASE_URL', 'http://recommendest.com');
 
 $method = $_SERVER['REQUEST_METHOD'];
 $route = $_GET['route'] ?? 'home';
